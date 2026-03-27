@@ -1,0 +1,978 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85F607AD-B982-415C-858D-0720318651C6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UTMH_Edu</RootNamespace>
+    <AssemblyName>UTMH-Edu</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Users\LETAILLE\OneDrive\Desktop\ajax\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MonCashSDK.NET, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonCashSDK.NET.1.2.0\lib\net452\MonCashSDK.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.7.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.7.0\lib\net40\QRCoder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="unirest-net, Version=1.0.4.3, Culture=neutral, PublicKeyToken=1f37cfb64cbec918, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unirest-API.1.0.7.6\lib\unirest-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\myFile.txt" />
+    <Content Include="assets\css\argon-dashboard.css" />
+    <Content Include="assets\css\argon-dashboard.min.css" />
+    <Content Include="assets\css\nucleo-icons.css" />
+    <Content Include="assets\css\nucleo-svg.css" />
+    <Content Include="assets\fonts\nucleo-icons.svg" />
+    <Content Include="assets\img\carousel-1.png" />
+    <Content Include="assets\img\carousel-2.png" />
+    <Content Include="assets\img\carousel-3.png" />
+    <Content Include="assets\img\logo-ct-dark.png" />
+    <Content Include="assets\img\logo1.png" />
+    <Content Include="assets\img\moncash.png" />
+    <Content Include="assets\js\argon-dashboard.js" />
+    <Content Include="assets\js\argon-dashboard.min.js" />
+    <Content Include="assets\js\core\bootstrap.bundle.min.js" />
+    <Content Include="assets\js\core\bootstrap.min.js" />
+    <Content Include="assets\js\core\popper.min.js" />
+    <Content Include="assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="assets\js\plugins\Chart.extension.js" />
+    <Content Include="assets\js\plugins\chartjs.min.js" />
+    <Content Include="assets\js\plugins\perfect-scrollbar.min.js" />
+    <Content Include="assets\js\plugins\smooth-scrollbar.min.js" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\tests\sass-true\register.js" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\tests\sass-true\runner.js" />
+    <Content Include="Images\badge_template.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SiteUtilisateur\css\bootstrap.css" />
+    <Content Include="SiteUtilisateur\css\font-awesome.min.css" />
+    <Content Include="SiteUtilisateur\css\linearicons.css" />
+    <Content Include="SiteUtilisateur\css\magnific-popup.css" />
+    <Content Include="SiteUtilisateur\css\main.css" />
+    <Content Include="SiteUtilisateur\css\nice-select.css" />
+    <Content Include="SiteUtilisateur\css\owl.carousel.css" />
+    <Content Include="SiteUtilisateur\fonts\fontawesome-webfont.svg" />
+    <Content Include="SiteUtilisateur\fonts\Linearicons-Free.svg" />
+    <Content Include="SiteUtilisateur\img\about-img.jpg" />
+    <Content Include="SiteUtilisateur\img\header-bg1.png" />
+    <Content Include="SiteUtilisateur\img\header-bg.jpg" />
+    <Content Include="SiteUtilisateur\img\image.jpg" />
+    <Content Include="SiteUtilisateur\img\IMG_9984.jpg" />
+    <Content Include="SiteUtilisateur\img\logo.png" />
+    <Content Include="SiteUtilisateur\img\logo1.png" />
+    <Content Include="SiteUtilisateur\img\massage.jpg" />
+    <Content Include="SiteUtilisateur\img\p00.jpg" />
+    <Content Include="SiteUtilisateur\img\p1.jpg" />
+    <Content Include="SiteUtilisateur\img\p21.jpg" />
+    <Content Include="SiteUtilisateur\img\p3.jpg" />
+    <Content Include="SiteUtilisateur\img\p31.jpg" />
+    <Content Include="SiteUtilisateur\img\payment.png" />
+    <Content Include="SiteUtilisateur\img\v1.jpg" />
+    <Content Include="SiteUtilisateur\img\v2.jpg" />
+    <Content Include="SiteUtilisateur\img\v3.jpg" />
+    <Content Include="SiteUtilisateur\img\v4.jpg" />
+    <Content Include="SiteUtilisateur\js\countdown.js" />
+    <Content Include="SiteUtilisateur\js\jquery.ajaxchimp.min.js" />
+    <Content Include="SiteUtilisateur\js\jquery.magnific-popup.min.js" />
+    <Content Include="SiteUtilisateur\js\jquery.nice-select.min.js" />
+    <Content Include="SiteUtilisateur\js\jquery.sticky.js" />
+    <Content Include="SiteUtilisateur\js\main.js" />
+    <Content Include="SiteUtilisateur\js\owl.carousel.min.js" />
+    <Content Include="SiteUtilisateur\js\parallax.min.js" />
+    <Content Include="SiteUtilisateur\js\vendor\bootstrap.min.js" />
+    <Content Include="SiteUtilisateur\js\vendor\jquery-2.2.4.min.js" />
+    <Content Include="assets\css\argon-dashboard.css.map" />
+    <Content Include="assets\fonts\nucleo-icons.eot" />
+    <Content Include="assets\fonts\nucleo-icons.ttf" />
+    <Content Include="assets\fonts\nucleo-icons.woff" />
+    <Content Include="assets\fonts\nucleo-icons.woff2" />
+    <Content Include="assets\fonts\nucleo.eot" />
+    <Content Include="assets\fonts\nucleo.ttf" />
+    <Content Include="assets\fonts\nucleo.woff" />
+    <Content Include="assets\fonts\nucleo.woff2" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\forms\_floating-labels.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\forms\_form-check.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\forms\_form-control.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\forms\_form-range.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\forms\_form-select.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\forms\_form-text.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\forms\_input-group.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\forms\_labels.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\forms\_validation.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_clearfix.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_color-bg.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_colored-links.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_focus-ring.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_icon-link.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_position.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_ratio.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_stacks.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_stretched-link.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_text-truncation.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_visually-hidden.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\helpers\_vr.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_alert.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_backdrop.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_banner.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_buttons.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_caret.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_color-mode.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_color-scheme.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_container.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_forms.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_gradients.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_grid.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_image.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_list-group.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_lists.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_pagination.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_resize.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_table-variants.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_transition.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_utilities.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\mixins\_visually-hidden.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\tests\mixins\_auto-import-of-variables-dark.test.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\tests\mixins\_color-modes.test.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\tests\mixins\_media-query-color-mode-full.test.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\tests\mixins\_utilities.test.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\tests\utilities\_api.test.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\utilities\_api.scss" />
+    <Content Include="assets\scss\argon-dashboard\bootstrap\vendor\_rfs.scss" />
+    <Content Include="assets\scss\argon-dashboard\cards\card-background.scss" />
+    <Content Include="assets\scss\argon-dashboard\cards\card-carousel.scss" />
+    <Content Include="assets\scss\argon-dashboard\custom\_styles.scss" />
+    <Content Include="assets\scss\argon-dashboard\custom\_variables.scss" />
+    <Content Include="assets\scss\argon-dashboard\forms\_form-check.scss" />
+    <Content Include="assets\scss\argon-dashboard\forms\_form-select.scss" />
+    <Content Include="assets\scss\argon-dashboard\forms\_form-switch.scss" />
+    <Content Include="assets\scss\argon-dashboard\forms\_forms.scss" />
+    <Content Include="assets\scss\argon-dashboard\forms\_input-group.scss" />
+    <Content Include="assets\scss\argon-dashboard\forms\_inputs.scss" />
+    <Content Include="assets\scss\argon-dashboard\forms\_labels.scss" />
+    <Content Include="assets\scss\argon-dashboard\mixins\mixins.scss" />
+    <Content Include="assets\scss\argon-dashboard\mixins\_badge.scss" />
+    <Content Include="assets\scss\argon-dashboard\mixins\_colored-shadows.scss" />
+    <Content Include="assets\scss\argon-dashboard\mixins\_hover.scss" />
+    <Content Include="assets\scss\argon-dashboard\mixins\_social-buttons.scss" />
+    <Content Include="assets\scss\argon-dashboard\plugins\free\plugins.scss" />
+    <Content Include="assets\scss\argon-dashboard\plugins\free\_flatpickr.scss" />
+    <Content Include="assets\scss\argon-dashboard\plugins\free\_nouislider.scss" />
+    <Content Include="assets\scss\argon-dashboard\plugins\free\_perfect-scrollbar.scss" />
+    <Content Include="assets\scss\argon-dashboard\plugins\free\_prism.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_animations.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_avatars.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_badge.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_breadcrumb.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_cards-extend.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_cards.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_choices.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_dark-version.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_dropdowns.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_fixed-plugin.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_form-switch.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_full-calendar.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_header.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_info-areas.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_misc-extend.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_misc.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_navbar-vertical.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_navbar.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_pagination.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_rtl.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_social-buttons.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_table.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_timeline.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_utilities-extend.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_utilities.scss" />
+    <Content Include="assets\scss\argon-dashboard\variables\_virtual-reality.scss" />
+    <Content Include="assets\js\argon-dashboard.js.map" />
+    <Content Include="SiteUtilisateur\fonts\fontawesome-webfont.eot" />
+    <Content Include="SiteUtilisateur\fonts\fontawesome-webfont.ttf" />
+    <Content Include="SiteUtilisateur\fonts\fontawesome-webfont.woff" />
+    <Content Include="SiteUtilisateur\fonts\fontawesome-webfont.woff2" />
+    <Content Include="SiteUtilisateur\fonts\FontAwesome.otf" />
+    <Content Include="SiteUtilisateur\fonts\Linearicons-Free.eot" />
+    <Content Include="SiteUtilisateur\fonts\Linearicons-Free.ttf" />
+    <Content Include="SiteUtilisateur\fonts\Linearicons-Free.woff" />
+    <Content Include="SiteUtilisateur\fonts\Linearicons-Free.woff2" />
+    <Content Include="SiteUtilisateur\scss\bootstrap.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\.DS_Store" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_navbar-align.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_alert.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_badge.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_button-group.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_buttons.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_card.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_carousel.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_close.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_code.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_dropdown.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_forms.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_functions.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_grid.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_images.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_input-group.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_list-group.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_media.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_mixins.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_modal.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_nav.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_navbar.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_pagination.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_popover.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_print.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_progress.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_reboot.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_tables.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_tooltip.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_transitions.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_type.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_utilities.scss" />
+    <Content Include="SiteUtilisateur\scss\bootstrap\_variables.scss" />
+    <Content Include="SiteUtilisateur\scss\main.scss" />
+    <Content Include="SiteUtilisateur\scss\theme\_elements.scss" />
+    <Content Include="SiteUtilisateur\scss\theme\_flexbox.scss" />
+    <Content Include="SiteUtilisateur\scss\theme\_footer.scss" />
+    <Content Include="SiteUtilisateur\scss\theme\_header.scss" />
+    <Content Include="SiteUtilisateur\scss\theme\_home.scss" />
+    <Content Include="SiteUtilisateur\scss\theme\_mixins.scss" />
+    <Content Include="SiteUtilisateur\scss\theme\_reset.scss" />
+    <Content Include="SiteUtilisateur\scss\theme\_variables.scss" />
+    <Content Include="Vue\AccueilEtudiant.Master" />
+    <Content Include="Vue\AccueilProfesseur.Master" />
+    <Content Include="Vue\Accueil.Master" />
+    <Content Include="dbUtmhDataSet.xsc">
+      <DependentUpon>dbUtmhDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="dbUtmhDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbUtmhDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="dbUtmhDataSet.xss">
+      <DependentUpon>dbUtmhDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Vue\DeconnexionAuto.aspx" />
+    <Content Include="Vue\Default.aspx" />
+    <Content Include="Vue\FormAccueilAdm.aspx" />
+    <Content Include="Vue\FormAccueilEtudiant.aspx" />
+    <Content Include="Vue\FormAccueilProfesseur.aspx" />
+    <Content Include="Vue\FormAdministrateur.aspx" />
+    <Content Include="Vue\FormBadge.aspx" />
+    <Content Include="Vue\FormBulletinEtudiant.aspx" />
+    <Content Include="Vue\FormConnexion.aspx" />
+    <Content Include="Vue\FormCours.aspx" />
+    <Content Include="Vue\FormDeconnexion.aspx" />
+    <Content Include="Vue\FormDepenseAdministrative.aspx" />
+    <Content Include="Vue\FormDossierAdministrateur.aspx" />
+    <Content Include="Vue\FormDossierCours.aspx" />
+    <Content Include="Vue\FormDossierEtudiant.aspx" />
+    <Content Include="Vue\FormDossierProfesseur.aspx" />
+    <Content Include="Vue\FormEnregistrerNote.aspx" />
+    <Content Include="Vue\FormEnregistrerPaiementEtudiant.aspx" />
+    <Content Include="Vue\FormEnvoyerMessage.aspx" />
+    <Content Include="Vue\FormEtudiant.aspx" />
+    <Content Include="Vue\FormJournalisation.aspx" />
+    <Content Include="Vue\FormListeAdministrateur.aspx" />
+    <Content Include="Vue\FormListeCours.aspx" />
+    <Content Include="Vue\FormListeEtudiant.aspx" />
+    <Content Include="Vue\FormListeNote.aspx" />
+    <Content Include="Vue\FormListePaiementEtudiant.aspx" />
+    <Content Include="Vue\FormListeProfesseur.aspx" />
+    <Content Include="Vue\FormMessagesSupport.aspx" />
+    <Content Include="Vue\FormModifierMotPasseAdministrateur.aspx" />
+    <Content Include="Vue\FormModifierMotPasseEtudiant.aspx" />
+    <Content Include="Vue\FormModifierMotPasseProfesseur.aspx" />
+    <Content Include="Vue\FormMotDePasseOublie.aspx" />
+    <Content Include="Vue\FormNote.aspx" />
+    <Content Include="Vue\FormPaiement.aspx" />
+    <Content Include="Vue\FormPaiementEtudiantMoncash.aspx" />
+    <Content Include="Vue\FormPayroll.aspx" />
+    <Content Include="Vue\FormPresence.aspx" />
+    <Content Include="Vue\FormProfesseur.aspx" />
+    <Content Include="Vue\FormProfileAdministrateur.aspx" />
+    <Content Include="Vue\FormProfileEtudiant.aspx" />
+    <Content Include="Vue\FormProfileProfesseur.aspx" />
+    <Content Include="Vue\FormReinitialiserMotPasse.aspx" />
+    <Content Include="Vue\FormSalaire.aspx" />
+    <Content Include="Vue\FormVoirNote.aspx" />
+    <Content Include="Vue\FormVoirPaie.aspx" />
+    <Content Include="Vue\FormVoirPaiement.aspx" />
+    <Content Include="Vue\FormVoirPayroll.aspx" />
+    <Content Include="Vue\MonCashSecurityCode.aspx" />
+    <Content Include="Vue\RapportListeAdministrateur.aspx" />
+    <Content Include="Vue\RapportListeEtudiant.aspx" />
+    <Content Include="Vue\RapportListeProfesseur.aspx" />
+    <Content Include="Vue\WebhookBazik.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlleur\ControlleurAdministrateur.cs" />
+    <Compile Include="Controlleur\ControlleurContact.cs" />
+    <Compile Include="Controlleur\ControlleurCours.cs" />
+    <Compile Include="Controlleur\ControlleurDepenseAdministrative.cs" />
+    <Compile Include="Controlleur\ControlleurEtudiant.cs" />
+    <Compile Include="Controlleur\ControlleurNote.cs" />
+    <Compile Include="Controlleur\ControlleurPaiement.cs" />
+    <Compile Include="Controlleur\ControlleurPayroll.cs" />
+    <Compile Include="Controlleur\ControlleurProfesseur.cs" />
+    <Compile Include="Controlleur\ControlleurReinitialiserMotPasse.cs" />
+    <Compile Include="Controlleur\ControlleurSalaire.cs" />
+    <Compile Include="dbUtmhDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbUtmhDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Administrateur.cs" />
+    <Compile Include="Model\Contact.cs" />
+    <Compile Include="Model\Cours.cs" />
+    <Compile Include="Model\DepenseAdministrative.cs" />
+    <Compile Include="Model\Etudiant.cs" />
+    <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\Note.cs" />
+    <Compile Include="Model\Paiement.cs" />
+    <Compile Include="Model\Payroll.cs" />
+    <Compile Include="Model\Professeur.cs" />
+    <Compile Include="Model\ReinitialiserMotPasse.cs" />
+    <Compile Include="Model\Salaire.cs" />
+    <Compile Include="Model\Utilisateur.cs" />
+    <Compile Include="Model\UtilisateurService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceTech\BazikService.cs" />
+    <Compile Include="ServiceTech\ServiceTechnique.cs" />
+    <Compile Include="Vue\Accueil.Master.cs">
+      <DependentUpon>Accueil.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\Accueil.Master.designer.cs">
+      <DependentUpon>Accueil.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\AccueilEtudiant.Master.cs">
+      <DependentUpon>AccueilEtudiant.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\AccueilEtudiant.Master.designer.cs">
+      <DependentUpon>AccueilEtudiant.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\AccueilProfesseur.Master.cs">
+      <DependentUpon>AccueilProfesseur.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\AccueilProfesseur.Master.designer.cs">
+      <DependentUpon>AccueilProfesseur.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\DeconnexionAuto.aspx.cs">
+      <DependentUpon>DeconnexionAuto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\DeconnexionAuto.aspx.designer.cs">
+      <DependentUpon>DeconnexionAuto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormAccueilAdm.aspx.cs">
+      <DependentUpon>FormAccueilAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormAccueilAdm.aspx.designer.cs">
+      <DependentUpon>FormAccueilAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormAccueilEtudiant.aspx.cs">
+      <DependentUpon>FormAccueilEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormAccueilEtudiant.aspx.designer.cs">
+      <DependentUpon>FormAccueilEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormAccueilProfesseur.aspx.cs">
+      <DependentUpon>FormAccueilProfesseur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormAccueilProfesseur.aspx.designer.cs">
+      <DependentUpon>FormAccueilProfesseur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormAdministrateur.aspx.cs">
+      <DependentUpon>FormAdministrateur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormAdministrateur.aspx.designer.cs">
+      <DependentUpon>FormAdministrateur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormBadge.aspx.cs">
+      <DependentUpon>FormBadge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormBadge.aspx.designer.cs">
+      <DependentUpon>FormBadge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormBulletinEtudiant.aspx.cs">
+      <DependentUpon>FormBulletinEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormBulletinEtudiant.aspx.designer.cs">
+      <DependentUpon>FormBulletinEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormConnexion.aspx.cs">
+      <DependentUpon>FormConnexion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormConnexion.aspx.designer.cs">
+      <DependentUpon>FormConnexion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormCours.aspx.cs">
+      <DependentUpon>FormCours.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormCours.aspx.designer.cs">
+      <DependentUpon>FormCours.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormDeconnexion.aspx.cs">
+      <DependentUpon>FormDeconnexion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormDeconnexion.aspx.designer.cs">
+      <DependentUpon>FormDeconnexion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormDepenseAdministrative.aspx.cs">
+      <DependentUpon>FormDepenseAdministrative.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormDepenseAdministrative.aspx.designer.cs">
+      <DependentUpon>FormDepenseAdministrative.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormDossierAdministrateur.aspx.cs">
+      <DependentUpon>FormDossierAdministrateur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormDossierAdministrateur.aspx.designer.cs">
+      <DependentUpon>FormDossierAdministrateur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormDossierCours.aspx.cs">
+      <DependentUpon>FormDossierCours.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormDossierCours.aspx.designer.cs">
+      <DependentUpon>FormDossierCours.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormDossierEtudiant.aspx.cs">
+      <DependentUpon>FormDossierEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormDossierEtudiant.aspx.designer.cs">
+      <DependentUpon>FormDossierEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormDossierProfesseur.aspx.cs">
+      <DependentUpon>FormDossierProfesseur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormDossierProfesseur.aspx.designer.cs">
+      <DependentUpon>FormDossierProfesseur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormEnregistrerNote.aspx.cs">
+      <DependentUpon>FormEnregistrerNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormEnregistrerNote.aspx.designer.cs">
+      <DependentUpon>FormEnregistrerNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormEnregistrerPaiementEtudiant.aspx.cs">
+      <DependentUpon>FormEnregistrerPaiementEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormEnregistrerPaiementEtudiant.aspx.designer.cs">
+      <DependentUpon>FormEnregistrerPaiementEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormEnvoyerMessage.aspx.cs">
+      <DependentUpon>FormEnvoyerMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormEnvoyerMessage.aspx.designer.cs">
+      <DependentUpon>FormEnvoyerMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormEtudiant.aspx.cs">
+      <DependentUpon>FormEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormEtudiant.aspx.designer.cs">
+      <DependentUpon>FormEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormJournalisation.aspx.cs">
+      <DependentUpon>FormJournalisation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormJournalisation.aspx.designer.cs">
+      <DependentUpon>FormJournalisation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormListeAdministrateur.aspx.cs">
+      <DependentUpon>FormListeAdministrateur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormListeAdministrateur.aspx.designer.cs">
+      <DependentUpon>FormListeAdministrateur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormListeCours.aspx.cs">
+      <DependentUpon>FormListeCours.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormListeCours.aspx.designer.cs">
+      <DependentUpon>FormListeCours.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormListeEtudiant.aspx.cs">
+      <DependentUpon>FormListeEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormListeEtudiant.aspx.designer.cs">
+      <DependentUpon>FormListeEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormListeNote.aspx.cs">
+      <DependentUpon>FormListeNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormListeNote.aspx.designer.cs">
+      <DependentUpon>FormListeNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormListePaiementEtudiant.aspx.cs">
+      <DependentUpon>FormListePaiementEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormListePaiementEtudiant.aspx.designer.cs">
+      <DependentUpon>FormListePaiementEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormListeProfesseur.aspx.cs">
+      <DependentUpon>FormListeProfesseur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormListeProfesseur.aspx.designer.cs">
+      <DependentUpon>FormListeProfesseur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormMessagesSupport.aspx.cs">
+      <DependentUpon>FormMessagesSupport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormMessagesSupport.aspx.designer.cs">
+      <DependentUpon>FormMessagesSupport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormModifierMotPasseAdministrateur.aspx.cs">
+      <DependentUpon>FormModifierMotPasseAdministrateur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormModifierMotPasseAdministrateur.aspx.designer.cs">
+      <DependentUpon>FormModifierMotPasseAdministrateur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormModifierMotPasseEtudiant.aspx.cs">
+      <DependentUpon>FormModifierMotPasseEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormModifierMotPasseEtudiant.aspx.designer.cs">
+      <DependentUpon>FormModifierMotPasseEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormModifierMotPasseProfesseur.aspx.cs">
+      <DependentUpon>FormModifierMotPasseProfesseur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormModifierMotPasseProfesseur.aspx.designer.cs">
+      <DependentUpon>FormModifierMotPasseProfesseur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormMotDePasseOublie.aspx.cs">
+      <DependentUpon>FormMotDePasseOublie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormMotDePasseOublie.aspx.designer.cs">
+      <DependentUpon>FormMotDePasseOublie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormNote.aspx.cs">
+      <DependentUpon>FormNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormNote.aspx.designer.cs">
+      <DependentUpon>FormNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormPaiement.aspx.cs">
+      <DependentUpon>FormPaiement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormPaiement.aspx.designer.cs">
+      <DependentUpon>FormPaiement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormPaiementEtudiantMoncash.aspx.cs">
+      <DependentUpon>FormPaiementEtudiantMoncash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormPaiementEtudiantMoncash.aspx.designer.cs">
+      <DependentUpon>FormPaiementEtudiantMoncash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormPayroll.aspx.cs">
+      <DependentUpon>FormPayroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormPayroll.aspx.designer.cs">
+      <DependentUpon>FormPayroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormPresence.aspx.cs">
+      <DependentUpon>FormPresence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormPresence.aspx.designer.cs">
+      <DependentUpon>FormPresence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormProfesseur.aspx.cs">
+      <DependentUpon>FormProfesseur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormProfesseur.aspx.designer.cs">
+      <DependentUpon>FormProfesseur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormProfileAdministrateur.aspx.cs">
+      <DependentUpon>FormProfileAdministrateur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormProfileAdministrateur.aspx.designer.cs">
+      <DependentUpon>FormProfileAdministrateur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormProfileEtudiant.aspx.cs">
+      <DependentUpon>FormProfileEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormProfileEtudiant.aspx.designer.cs">
+      <DependentUpon>FormProfileEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormProfileProfesseur.aspx.cs">
+      <DependentUpon>FormProfileProfesseur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormProfileProfesseur.aspx.designer.cs">
+      <DependentUpon>FormProfileProfesseur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormReinitialiserMotPasse.aspx.cs">
+      <DependentUpon>FormReinitialiserMotPasse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormReinitialiserMotPasse.aspx.designer.cs">
+      <DependentUpon>FormReinitialiserMotPasse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormSalaire.aspx.cs">
+      <DependentUpon>FormSalaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormSalaire.aspx.designer.cs">
+      <DependentUpon>FormSalaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormVoirNote.aspx.cs">
+      <DependentUpon>FormVoirNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormVoirNote.aspx.designer.cs">
+      <DependentUpon>FormVoirNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormVoirPaie.aspx.cs">
+      <DependentUpon>FormVoirPaie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormVoirPaie.aspx.designer.cs">
+      <DependentUpon>FormVoirPaie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormVoirPaiement.aspx.cs">
+      <DependentUpon>FormVoirPaiement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormVoirPaiement.aspx.designer.cs">
+      <DependentUpon>FormVoirPaiement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormVoirPayroll.aspx.cs">
+      <DependentUpon>FormVoirPayroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\FormVoirPayroll.aspx.designer.cs">
+      <DependentUpon>FormVoirPayroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\MonCashSecurityCode.aspx.cs">
+      <DependentUpon>MonCashSecurityCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\MonCashSecurityCode.aspx.designer.cs">
+      <DependentUpon>MonCashSecurityCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\RapportListeAdministrateur.aspx.cs">
+      <DependentUpon>RapportListeAdministrateur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\RapportListeAdministrateur.aspx.designer.cs">
+      <DependentUpon>RapportListeAdministrateur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\RapportListeEtudiant.aspx.cs">
+      <DependentUpon>RapportListeEtudiant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\RapportListeEtudiant.aspx.designer.cs">
+      <DependentUpon>RapportListeEtudiant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\RapportListeProfesseur.aspx.cs">
+      <DependentUpon>RapportListeProfesseur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\RapportListeProfesseur.aspx.designer.cs">
+      <DependentUpon>RapportListeProfesseur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\WebhookBazik.aspx.cs">
+      <DependentUpon>WebhookBazik.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vue\WebhookBazik.aspx.designer.cs">
+      <DependentUpon>WebhookBazik.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vue\RapportListeAdministrateur.rdlc" />
+    <EmbeddedResource Include="Vue\RapportListeEtudiant.rdlc" />
+    <EmbeddedResource Include="Vue\RapportListeProfesseur.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14014</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14014/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

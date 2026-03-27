@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dbUtmhDataSet" targetNamespace="http://tempuri.org/dbUtmhDataSet.xsd" xmlns:mstns="http://tempuri.org/dbUtmhDataSet.xsd" xmlns="http://tempuri.org/dbUtmhDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="dbConnect" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbConnect (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.dbConnect.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="listeNotesTableAdapter" GeneratorDataComponentClassName="listeNotesTableAdapter" Name="listeNotes" UserDataComponentName="listeNotesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbConnect (Web.config)" DbObjectName="dbUtmh.dbo.listeNotes" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idNote, idEtudiant, nom, prenom, anneeAcademique, idOption, nomOption, idCours, nomCours, libelleNote, noteObtenue, typeNote, dateNote FROM dbo.listeNotes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idNote" DataSetColumn="idNote" />
+              <Mapping SourceColumn="idEtudiant" DataSetColumn="idEtudiant" />
+              <Mapping SourceColumn="nom" DataSetColumn="nom" />
+              <Mapping SourceColumn="prenom" DataSetColumn="prenom" />
+              <Mapping SourceColumn="anneeAcademique" DataSetColumn="anneeAcademique" />
+              <Mapping SourceColumn="idOption" DataSetColumn="idOption" />
+              <Mapping SourceColumn="nomOption" DataSetColumn="nomOption" />
+              <Mapping SourceColumn="idCours" DataSetColumn="idCours" />
+              <Mapping SourceColumn="nomCours" DataSetColumn="nomCours" />
+              <Mapping SourceColumn="libelleNote" DataSetColumn="libelleNote" />
+              <Mapping SourceColumn="noteObtenue" DataSetColumn="noteObtenue" />
+              <Mapping SourceColumn="typeNote" DataSetColumn="typeNote" />
+              <Mapping SourceColumn="dateNote" DataSetColumn="dateNote" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dbUtmhDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dbUtmhDataSet" msprop:Generator_UserDSName="dbUtmhDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="listeNotes" msprop:Generator_TableClassName="listeNotesDataTable" msprop:Generator_TableVarName="tablelisteNotes" msprop:Generator_TablePropName="listeNotes" msprop:Generator_RowDeletingName="listeNotesRowDeleting" msprop:Generator_RowChangingName="listeNotesRowChanging" msprop:Generator_RowEvHandlerName="listeNotesRowChangeEventHandler" msprop:Generator_RowDeletedName="listeNotesRowDeleted" msprop:Generator_UserTableName="listeNotes" msprop:Generator_RowChangedName="listeNotesRowChanged" msprop:Generator_RowEvArgName="listeNotesRowChangeEvent" msprop:Generator_RowClassName="listeNotesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idNote" msprop:Generator_ColumnVarNameInTable="columnidNote" msprop:Generator_ColumnPropNameInRow="idNote" msprop:Generator_ColumnPropNameInTable="idNoteColumn" msprop:Generator_UserColumnName="idNote" type="xs:int" />
+              <xs:element name="idEtudiant" msprop:Generator_ColumnVarNameInTable="columnidEtudiant" msprop:Generator_ColumnPropNameInRow="idEtudiant" msprop:Generator_ColumnPropNameInTable="idEtudiantColumn" msprop:Generator_UserColumnName="idEtudiant" type="xs:int" />
+              <xs:element name="nom" msprop:Generator_ColumnVarNameInTable="columnnom" msprop:Generator_ColumnPropNameInRow="nom" msprop:Generator_ColumnPropNameInTable="nomColumn" msprop:Generator_UserColumnName="nom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prenom" msprop:Generator_ColumnVarNameInTable="columnprenom" msprop:Generator_ColumnPropNameInRow="prenom" msprop:Generator_ColumnPropNameInTable="prenomColumn" msprop:Generator_UserColumnName="prenom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anneeAcademique" msprop:Generator_ColumnVarNameInTable="columnanneeAcademique" msprop:Generator_ColumnPropNameInRow="anneeAcademique" msprop:Generator_ColumnPropNameInTable="anneeAcademiqueColumn" msprop:Generator_UserColumnName="anneeAcademique" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idOption" msprop:Generator_ColumnVarNameInTable="columnidOption" msprop:Generator_ColumnPropNameInRow="idOption" msprop:Generator_ColumnPropNameInTable="idOptionColumn" msprop:Generator_UserColumnName="idOption" type="xs:int" />
+              <xs:element name="nomOption" msprop:Generator_ColumnVarNameInTable="columnnomOption" msprop:Generator_ColumnPropNameInRow="nomOption" msprop:Generator_ColumnPropNameInTable="nomOptionColumn" msprop:Generator_UserColumnName="nomOption" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idCours" msprop:Generator_ColumnVarNameInTable="columnidCours" msprop:Generator_ColumnPropNameInRow="idCours" msprop:Generator_ColumnPropNameInTable="idCoursColumn" msprop:Generator_UserColumnName="idCours" type="xs:int" />
+              <xs:element name="nomCours" msprop:Generator_ColumnVarNameInTable="columnnomCours" msprop:Generator_ColumnPropNameInRow="nomCours" msprop:Generator_ColumnPropNameInTable="nomCoursColumn" msprop:Generator_UserColumnName="nomCours" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="libelleNote" msprop:Generator_ColumnVarNameInTable="columnlibelleNote" msprop:Generator_ColumnPropNameInRow="libelleNote" msprop:Generator_ColumnPropNameInTable="libelleNoteColumn" msprop:Generator_UserColumnName="libelleNote" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="noteObtenue" msprop:Generator_ColumnVarNameInTable="columnnoteObtenue" msprop:Generator_ColumnPropNameInRow="noteObtenue" msprop:Generator_ColumnPropNameInTable="noteObtenueColumn" msprop:Generator_UserColumnName="noteObtenue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="typeNote" msprop:Generator_ColumnVarNameInTable="columntypeNote" msprop:Generator_ColumnPropNameInRow="typeNote" msprop:Generator_ColumnPropNameInTable="typeNoteColumn" msprop:Generator_UserColumnName="typeNote" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dateNote" msprop:Generator_ColumnVarNameInTable="columndateNote" msprop:Generator_ColumnPropNameInRow="dateNote" msprop:Generator_ColumnPropNameInTable="dateNoteColumn" msprop:Generator_UserColumnName="dateNote" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:listeNotes" />
+      <xs:field xpath="mstns:idNote" />
+      <xs:field xpath="mstns:idEtudiant" />
+      <xs:field xpath="mstns:idOption" />
+      <xs:field xpath="mstns:idCours" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
