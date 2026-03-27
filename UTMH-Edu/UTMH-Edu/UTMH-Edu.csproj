@@ -502,7 +502,6 @@
     <Content Include="Vue\FormVoirPaiement.aspx" />
     <Content Include="Vue\FormVoirPayroll.aspx" />
     <Content Include="Vue\MonCashSecurityCode.aspx" />
-    <Content Include="Vue\pageddd.aspx" />
     <Content Include="Vue\RapportListeAdministrateur.aspx" />
     <Content Include="Vue\RapportListeEtudiant.aspx" />
     <Content Include="Vue\RapportListeProfesseur.aspx" />
@@ -900,13 +899,6 @@
     </Compile>
     <Compile Include="Vue\MonCashSecurityCode.aspx.designer.cs">
       <DependentUpon>MonCashSecurityCode.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vue\pageddd.aspx.cs">
-      <DependentUpon>pageddd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vue\pageddd.aspx.designer.cs">
-      <DependentUpon>pageddd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vue\RapportListeAdministrateur.aspx.cs">
       <DependentUpon>RapportListeAdministrateur.aspx</DependentUpon>
