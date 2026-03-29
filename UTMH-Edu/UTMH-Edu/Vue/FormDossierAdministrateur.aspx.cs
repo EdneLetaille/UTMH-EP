@@ -136,7 +136,7 @@ namespace UTMH_Edu.Vue
                     telephone = @telephone,
                     statut = @statut,
                     cin=@cin,
-                    role = @role,                  
+                    role = @role                  
         WHERE code = @code";
             using (SqlConnection con = new SqlConnection(strCon))
 

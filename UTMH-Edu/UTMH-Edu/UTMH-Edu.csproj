@@ -442,6 +442,7 @@
     <Content Include="dbUtmhDataSet.xss">
       <DependentUpon>dbUtmhDataSet.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\POWERFULTECH.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
