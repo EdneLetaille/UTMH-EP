@@ -139,24 +139,6 @@ namespace UTMH_Edu.Vue {
         protected global::System.Web.UI.WebControls.DropDownList ddlOption;
         
         /// <summary>
-        /// ddlModePaiement control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlModePaiement;
-        
-        /// <summary>
-        /// btnMonCash control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnMonCash;
-        
-        /// <summary>
         /// lblErreur control.
         /// </summary>
         /// <remarks>
@@ -193,6 +175,15 @@ namespace UTMH_Edu.Vue {
         protected global::System.Web.UI.WebControls.TextBox txtCode;
         
         /// <summary>
+        /// ddlModePaiement control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlModePaiement;
+        
+        /// <summary>
         /// fuPhotoProfil control.
         /// </summary>
         /// <remarks>
@@ -218,6 +209,15 @@ namespace UTMH_Edu.Vue {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAnnuler;
+        
+        /// <summary>
+        /// btnEnvoye control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnvoye;
         
         /// <summary>
         /// txtNom1 control.

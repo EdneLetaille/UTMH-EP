@@ -235,18 +235,9 @@
                                         <label>Option choisie</label>
                                         <asp:DropDownList ID="ddlOption" CssClass="form-control" runat="server" />
                                     </div>
-                                    <div class="col-md-6">
-                                        <label>Mode de paiement</label>
-                                        <asp:DropDownList ID="ddlModePaiement" CssClass="form-control"
-                                            runat="server" AutoPostBack="true"
-                                            OnSelectedIndexChanged="ddlModePaiement_SelectedIndexChanged">
-                                            <asp:ListItem Value="">-- Sélectionner --</asp:ListItem>
-                                            <asp:ListItem Value="NatCash">NatCash</asp:ListItem>
-                                            <asp:ListItem Value="MonCash">MonCash</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
+                                   
 
-                                    <div class="col-12 text-center mt-4">
+                                   <%-- <div class="col-12 text-center mt-4">
 
                                         <asp:LinkButton
                                             ID="btnMonCash"
@@ -263,7 +254,7 @@
 
                                         </asp:LinkButton>
 
-                                    </div>
+                                    </div>--%>
 
                                     <asp:Label ID="lblErreur" runat="server" Text=""></asp:Label>
 
@@ -279,6 +270,17 @@
 
                                     <%--  <label>Code</label>--%>
                                     <asp:TextBox ID="txtCode" runat="server" ReadOnly="true" Visible="false" />
+
+                                     <div class="col-md-6">
+                                      <%--  <label>Mode de paiement</label>--%>
+                                        <asp:DropDownList ID="ddlModePaiement" CssClass="form-control"
+                                            runat="server" AutoPostBack="true"
+                                            visible="false">
+                                            <asp:ListItem Value="">-- Sélectionner --</asp:ListItem>
+                                            <asp:ListItem Value="NatCash">NatCash</asp:ListItem>
+                                            <asp:ListItem Value="MonCash">MonCash</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
 
 
 
@@ -298,7 +300,7 @@
                         </div>
                         <div class="modal-footer">
                             <asp:Button ID="btnAnnuler" runat="server" class="btn btn-secondary" data-bs-dismiss="modal" Text="Annuler" OnClick="btnAnnuler_Click" />
-                            <%-- <asp:Button ID="btnEnvoye" runat="server" class="btn btn-primary" Text="Envoyer" OnClick="btnEnvoyerEtudiant_Click" />--%>
+                             <asp:Button ID="btnEnvoye" runat="server" class="btn btn-primary" Text="Envoyer" OnClick="btnEnvoyerEtudiant_Click" />
                         </div>
                     </div>
                 </div>
