@@ -79,6 +79,121 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../SiteUtilisateur/css/bootstrap.css">
     <link rel="stylesheet" href="../SiteUtilisateur/css/main.css">
+   <style>
+    /* ===== HERO SLIDER ===== */
+    .banner-area {
+        position: relative;
+        overflow: hidden;
+        height: 915px;
+    }
+
+    .banner-slider {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .slide-item {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 1.2s ease-in-out;
+    }
+
+    .slide-item.active {
+        opacity: 1;
+    }
+
+    .banner-area .overlay-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.55);
+    }
+
+    /* Texte centré par-dessus */
+    .slider-text-wrap {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+    }
+
+    .slider-text-inner {
+        max-width: 750px;
+    }
+
+    .slider-title {
+        color: #ffffff;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
+    }
+
+    .slider-subtitle {
+        color: #f0f0f0;
+        font-size: 22px;
+        font-style: italic;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s;
+    }
+
+    /* Quand le texte est visible */
+    .slider-text-wrap.text-visible .slider-title,
+    .slider-text-wrap.text-visible .slider-subtitle {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Dots */
+    .slider-dots {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 3;
+    }
+
+    .slider-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.45);
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+        padding: 0;
+    }
+
+    .slider-dot.active {
+        background: #ffffff;
+        transform: scale(1.3);
+    }
+
+    /* Barre de progression */
+    .slider-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.85);
+        z-index: 4;
+        width: 0%;
+        transition: width linear;
+    }
+</style>
 </head>
 
 <body>
@@ -306,25 +421,44 @@
                 </div>
             </div>
 
-            <!-- start banner Area -->
-            <section class="banner-area relative" id="home">
-                <div class="overlay overlay-bg"></div>
-                <div class="container">
-                    <div class="row fullscreen align-items-center justify-content-start" style="height: 915px;">
-                        <div class="banner-content col-lg-9 col-md-12">
-                            <h1>Formons ensemble
-                                <br>
-                                les techniciens de demain
-                            </h1>
-                            <h3 class="fa-inverse"><em><strong class="ui-priority-primary">Un pays, Une École,  Notre avenir.
-                           
-                            </strong></em>
-                            </h3>
+           <!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="banner-slider">
+        <div class="slide-item active"
+             style="background-image: url('../SiteUtilisateur/img/slider1.png');"
+             data-title="Formons ensemble les techniciens de demain"
+             data-subtitle="Un pays, Une École, Notre avenir.">
+        </div>
+        <div class="slide-item"
+             style="background-image: url('../SiteUtilisateur/img/about-img.jpg');"
+             data-title="Excellence & Professionnalisme"
+             data-subtitle="Des formations adaptées au marché de l'emploi haïtien.">
+        </div>
+        <div class="slide-item"
+             style="background-image: url('../SiteUtilisateur/img/slider1.png');"
+             data-title="Rejoignez notre communauté"
+             data-subtitle="Plus de 10 options de formation disponibles dès aujourd'hui.">
+        </div>
+        <div class="slide-item"
+             style="background-image: url('../SiteUtilisateur/img/about-img.jpg');"
+             data-title="Construisons l'Haïti de demain"
+             data-subtitle="La technologie au service du développement national.">
+        </div>
+    </div>
+    <div class="overlay overlay-bg"></div>
 
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <!-- Texte dynamique par slide -->
+    <div class="slider-text-wrap">
+        <div class="slider-text-inner">
+            <h1 class="slider-title"></h1>
+            <h3 class="slider-subtitle"></h3>
+        </div>
+    </div>
+
+    <!-- Dots de navigation -->
+    <div class="slider-dots" id="sliderDots"></div>
+</section>
+<!-- End banner Area -->
             <!-- Modal -->
             <div class="modal fade" id="exampleLargeModal" tabindex="-1" role="dialog" aria-labelledby="exampleLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg  modal-fullscreen" role="document">
@@ -961,6 +1095,77 @@ et le développement intellectuel des jeunes. Nous croyons que la technologie es
                 }
             });
         </script>
+
+       <script>
+           document.addEventListener("DOMContentLoaded", function () {
+
+               const slides = document.querySelectorAll('.slide-item');
+               const dotsWrap = document.getElementById('sliderDots');
+               const textWrap = document.querySelector('.slider-text-wrap');
+               const titleEl = document.querySelector('.slider-title');
+               const subtitleEl = document.querySelector('.slider-subtitle');
+               const INTERVAL = 5000;
+
+               let current = 0;
+               let timer;
+
+               // Barre de progression
+               const bar = document.createElement('div');
+               bar.className = 'slider-progress';
+               document.querySelector('.banner-area').appendChild(bar);
+
+               // Création des dots
+               slides.forEach((_, i) => {
+                   const dot = document.createElement('button');
+                   dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                   dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+                   dot.addEventListener('click', () => goTo(i));
+                   dotsWrap.appendChild(dot);
+               });
+
+               // Mise à jour du texte avec animation
+               function updateText(slide) {
+                   // Cache le texte
+                   textWrap.classList.remove('text-visible');
+
+                   setTimeout(() => {
+                       titleEl.textContent = slide.dataset.title || '';
+                       subtitleEl.textContent = slide.dataset.subtitle || '';
+                       // Réaffiche avec animation
+                       textWrap.classList.add('text-visible');
+                   }, 300);
+               }
+
+               function goTo(index) {
+                   slides[current].classList.remove('active');
+                   dotsWrap.querySelectorAll('.slider-dot')[current].classList.remove('active');
+
+                   current = (index + slides.length) % slides.length;
+
+                   slides[current].classList.add('active');
+                   dotsWrap.querySelectorAll('.slider-dot')[current].classList.add('active');
+
+                   updateText(slides[current]);
+
+                   // Reset barre
+                   bar.style.transition = 'none';
+                   bar.style.width = '0%';
+                   setTimeout(() => {
+                       bar.style.transition = 'width ' + INTERVAL + 'ms linear';
+                       bar.style.width = '100%';
+                   }, 50);
+
+                   clearInterval(timer);
+                   timer = setInterval(() => goTo(current + 1), INTERVAL);
+               }
+
+               // Initialisation
+               updateText(slides[0]);
+               bar.style.transition = 'width ' + INTERVAL + 'ms linear';
+               bar.style.width = '100%';
+               timer = setInterval(() => goTo(current + 1), INTERVAL);
+           });
+       </script>
 
     </form>
 </body>
