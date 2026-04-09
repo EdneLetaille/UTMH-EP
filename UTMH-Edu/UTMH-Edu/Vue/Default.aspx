@@ -79,121 +79,121 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../SiteUtilisateur/css/bootstrap.css">
     <link rel="stylesheet" href="../SiteUtilisateur/css/main.css">
-   <style>
-    /* ===== HERO SLIDER ===== */
-    .banner-area {
-        position: relative;
-        overflow: hidden;
-        height: 915px;
-    }
+    <style>
+        /* ===== HERO SLIDER ===== */
+        .banner-area {
+            position: relative;
+            overflow: hidden;
+            height: 915px;
+        }
 
-    .banner-slider {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-    }
+        .banner-slider {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
 
-    .slide-item {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0;
-        transition: opacity 1.2s ease-in-out;
-    }
+        .slide-item {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
 
-    .slide-item.active {
-        opacity: 1;
-    }
+            .slide-item.active {
+                opacity: 1;
+            }
 
-    .banner-area .overlay-bg {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        background: rgba(0, 0, 0, 0.55);
-    }
+        .banner-area .overlay-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.55);
+        }
 
-    /* Texte centré par-dessus */
-    .slider-text-wrap {
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        padding-left: 60px;
-    }
+        /* Texte centré par-dessus */
+        .slider-text-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            padding-left: 60px;
+        }
 
-    .slider-text-inner {
-        max-width: 750px;
-    }
+        .slider-text-inner {
+            max-width: 750px;
+        }
 
-    .slider-title {
-        color: #ffffff;
-        font-size: 48px;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 20px;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
-    }
+        .slider-title {
+            color: #ffffff;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
+        }
 
-    .slider-subtitle {
-        color: #f0f0f0;
-        font-size: 22px;
-        font-style: italic;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s;
-    }
+        .slider-subtitle {
+            color: #f0f0f0;
+            font-size: 22px;
+            font-style: italic;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s;
+        }
 
-    /* Quand le texte est visible */
-    .slider-text-wrap.text-visible .slider-title,
-    .slider-text-wrap.text-visible .slider-subtitle {
-        opacity: 1;
-        transform: translateY(0);
-    }
+        /* Quand le texte est visible */
+        .slider-text-wrap.text-visible .slider-title,
+        .slider-text-wrap.text-visible .slider-subtitle {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    /* Dots */
-    .slider-dots {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-        z-index: 3;
-    }
+        /* Dots */
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
 
-    .slider-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.45);
-        border: 2px solid rgba(255, 255, 255, 0.8);
-        cursor: pointer;
-        transition: background 0.3s, transform 0.3s;
-        padding: 0;
-    }
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.45);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            padding: 0;
+        }
 
-    .slider-dot.active {
-        background: #ffffff;
-        transform: scale(1.3);
-    }
+            .slider-dot.active {
+                background: #ffffff;
+                transform: scale(1.3);
+            }
 
-    /* Barre de progression */
-    .slider-progress {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 3px;
-        background: rgba(255, 255, 255, 0.85);
-        z-index: 4;
-        width: 0%;
-        transition: width linear;
-    }
-</style>
+        /* Barre de progression */
+        .slider-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: 4;
+            width: 0%;
+            transition: width linear;
+        }
+    </style>
 </head>
 
 <body>
@@ -350,9 +350,9 @@
                                         <label>Option choisie</label>
                                         <asp:DropDownList ID="ddlOption" CssClass="form-control" runat="server" />
                                     </div>
-                                   
 
-                                   <%-- <div class="col-12 text-center mt-4">
+
+                                    <%-- <div class="col-12 text-center mt-4">
 
                                         <asp:LinkButton
                                             ID="btnMonCash"
@@ -386,11 +386,11 @@
                                     <%--  <label>Code</label>--%>
                                     <asp:TextBox ID="txtCode" runat="server" ReadOnly="true" Visible="false" />
 
-                                     <div class="col-md-6">
-                                      <%--  <label>Mode de paiement</label>--%>
+                                    <div class="col-md-6">
+                                        <%--  <label>Mode de paiement</label>--%>
                                         <asp:DropDownList ID="ddlModePaiement" CssClass="form-control"
                                             runat="server" AutoPostBack="true"
-                                            visible="false">
+                                            Visible="false">
                                             <asp:ListItem Value="">-- Sélectionner --</asp:ListItem>
                                             <asp:ListItem Value="NatCash">NatCash</asp:ListItem>
                                             <asp:ListItem Value="MonCash">MonCash</asp:ListItem>
@@ -415,50 +415,50 @@
                         </div>
                         <div class="modal-footer">
                             <asp:Button ID="btnAnnuler" runat="server" class="btn btn-secondary" data-bs-dismiss="modal" Text="Annuler" OnClick="btnAnnuler_Click" />
-                             <asp:Button ID="btnEnvoye" runat="server" class="btn btn-primary" Text="Envoyer" OnClick="btnEnvoyerEtudiant_Click" />
+                            <asp:Button ID="btnEnvoye" runat="server" class="btn btn-primary" Text="Envoyer" OnClick="btnEnvoyerEtudiant_Click" />
                         </div>
                     </div>
                 </div>
             </div>
 
-           <!-- Start banner Area -->
-<section class="banner-area relative" id="home">
-    <div class="banner-slider">
-        <div class="slide-item active"
-             style="background-image: url('../SiteUtilisateur/img/slider1.png');"
-             data-title="Formons ensemble les techniciens de demain"
-             data-subtitle="Un pays, Une École, Notre avenir.">
-        </div>
-        <div class="slide-item"
-             style="background-image: url('../SiteUtilisateur/img/about-img.jpg');"
-             data-title="Excellence & Professionnalisme"
-             data-subtitle="Des formations adaptées au marché de l'emploi haïtien.">
-        </div>
-        <div class="slide-item"
-             style="background-image: url('../SiteUtilisateur/img/slider1.png');"
-             data-title="Rejoignez notre communauté"
-             data-subtitle="Plus de 10 options de formation disponibles dès aujourd'hui.">
-        </div>
-        <div class="slide-item"
-             style="background-image: url('../SiteUtilisateur/img/about-img.jpg');"
-             data-title="Construisons l'Haïti de demain"
-             data-subtitle="La technologie au service du développement national.">
-        </div>
-    </div>
-    <div class="overlay overlay-bg"></div>
+            <!-- Start banner Area -->
+            <section class="banner-area relative" id="home">
+                <div class="banner-slider">
+                    <div class="slide-item active"
+                        style="background-image: url('../SiteUtilisateur/img/slider1.png');"
+                        data-title="Formons ensemble les techniciens de demain"
+                        data-subtitle="Un pays, Une École, Notre avenir.">
+                    </div>
+                    <div class="slide-item"
+                        style="background-image: url('../SiteUtilisateur/img/about-img.jpg');"
+                        data-title="Excellence & Professionnalisme"
+                        data-subtitle="Des formations adaptées au marché de l'emploi haïtien.">
+                    </div>
+                    <div class="slide-item"
+                        style="background-image: url('../SiteUtilisateur/img/header-bg.jpg');"
+                        data-title="Rejoignez notre communauté"
+                        data-subtitle="Plus de 10 options de formation disponibles dès aujourd'hui.">
+                    </div>
+                    <div class="slide-item"
+                        style="background-image: url('../SiteUtilisateur/img/logo.png');"
+                        data-title="Construisons l'Haïti de demain"
+                        data-subtitle="La technologie au service du développement national.">
+                    </div>
+                </div>
+                <div class="overlay overlay-bg"></div>
 
-    <!-- Texte dynamique par slide -->
-    <div class="slider-text-wrap">
-        <div class="slider-text-inner">
-            <h1 class="slider-title"></h1>
-            <h3 class="slider-subtitle"></h3>
-        </div>
-    </div>
+                <!-- Texte dynamique par slide -->
+                <div class="slider-text-wrap">
+                    <div class="slider-text-inner">
+                        <h1 class="slider-title"></h1>
+                        <h3 class="slider-subtitle"></h3>
+                    </div>
+                </div>
 
-    <!-- Dots de navigation -->
-    <div class="slider-dots" id="sliderDots"></div>
-</section>
-<!-- End banner Area -->
+                <!-- Dots de navigation -->
+                <div class="slider-dots" id="sliderDots"></div>
+            </section>
+            <!-- End banner Area -->
             <!-- Modal -->
             <div class="modal fade" id="exampleLargeModal" tabindex="-1" role="dialog" aria-labelledby="exampleLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg  modal-fullscreen" role="document">
@@ -760,7 +760,6 @@ et le développement intellectuel des jeunes. Nous croyons que la technologie es
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 vol-wrap">
-                           
                         </div>
                         <div class="col-lg-3 col-md-3 vol-wrap">
                             <div class="single-vol">
@@ -769,17 +768,25 @@ et le développement intellectuel des jeunes. Nous croyons que la technologie es
                                         <div class="content-overlay"></div>
                                         <img class="content-image img-fluid d-block mx-auto" src="../SiteUtilisateur/img/image.jpg" alt="">
                                         <div class="content-details fadeIn-bottom">
-                                            <h4>Edner LEtaille <br />& <br />Jonathan JACQUES</h4>
+                                            <h4>Edner LEtaille
+                                                <br />
+                                                &
+                                                <br />
+                                                Jonathan JACQUES</h4>
                                             <p>
-                                                Programmeur <br />& <br />Analyste
+                                                Programmeur
+                                                <br />
+                                                &
+                                                <br />
+                                                Analyste
                                             </p>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                       
-                      
+
+
 
                     </div>
                 </div>
@@ -884,8 +891,8 @@ et le développement intellectuel des jeunes. Nous croyons que la technologie es
                     <div class="row d-flex flex-column justify-content-center">
                         <ul class="footer-menu">
                             <a href="#home" class="auto-style1">Accueil</a>
-                                    <a href="#project" class="auto-style1">Options</a>
-                                    <a href="#about" class="auto-style1">A propos</a>
+                            <a href="#project" class="auto-style1">Options</a>
+                            <a href="#about" class="auto-style1">A propos</a>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -952,80 +959,80 @@ et le développement intellectuel des jeunes. Nous croyons que la technologie es
                 }
             </script>
 
-                    <script>
-            document.addEventListener("DOMContentLoaded", function () {
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
 
-                const phoneInputs = document.querySelectorAll('.phone');
-                const prefix = "+509";
-                const maxDigits = 8; // après +509
+                    const phoneInputs = document.querySelectorAll('.phone');
+                    const prefix = "+509";
+                    const maxDigits = 8; // après +509
 
-                function normalizePhone(input) {
-                    // Récupère uniquement les chiffres tapés
-                    let digits = input.value.replace(/\D/g, "");
+                    function normalizePhone(input) {
+                        // Récupère uniquement les chiffres tapés
+                        let digits = input.value.replace(/\D/g, "");
 
-                    // Si l'utilisateur a tapé/collé 509 au début, on l'enlève
-                    if (digits.startsWith("509")) digits = digits.slice(3);
+                        // Si l'utilisateur a tapé/collé 509 au début, on l'enlève
+                        if (digits.startsWith("509")) digits = digits.slice(3);
 
-                    // Limite à 8 chiffres
-                    digits = digits.slice(0, maxDigits);
+                        // Limite à 8 chiffres
+                        digits = digits.slice(0, maxDigits);
 
-                    // Reconstruit la valeur finale
-                    input.value = prefix + digits;
-                }
+                        // Reconstruit la valeur finale
+                        input.value = prefix + digits;
+                    }
 
-                phoneInputs.forEach(input => {
+                    phoneInputs.forEach(input => {
 
-                    // Focus: impose le prefix
-                    input.addEventListener("focus", () => {
-                        if (!input.value.startsWith(prefix)) input.value = prefix;
-                        // place le curseur à la fin
-                        setTimeout(() => input.setSelectionRange(input.value.length, input.value.length), 0);
+                        // Focus: impose le prefix
+                        input.addEventListener("focus", () => {
+                            if (!input.value.startsWith(prefix)) input.value = prefix;
+                            // place le curseur à la fin
+                            setTimeout(() => input.setSelectionRange(input.value.length, input.value.length), 0);
+                        });
+
+                        // Keydown: empêche de supprimer/modifier +509 + empêche non-chiffres
+                        input.addEventListener("keydown", (e) => {
+                            const pos = input.selectionStart;
+
+                            // Bloquer suppression dans le prefix
+                            if (pos <= prefix.length && (e.key === "Backspace" || e.key === "Delete")) {
+                                e.preventDefault();
+                                return;
+                            }
+
+                            // Autoriser navigation / contrôle
+                            const allowed = ["ArrowLeft", "ArrowRight", "Tab", "Backspace", "Delete", "Home", "End"];
+                            if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+
+                            // Après le prefix: uniquement chiffres
+                            if (pos >= prefix.length && !/^\d$/.test(e.key)) {
+                                e.preventDefault();
+                                return;
+                            }
+
+                            // Bloquer si déjà 8 chiffres après prefix
+                            const digitsCount = input.value.slice(prefix.length).replace(/\D/g, "").length;
+                            if (pos >= prefix.length && digitsCount >= maxDigits) {
+                                e.preventDefault();
+                            }
+                        });
+
+                        // Input: sécurité totale (bloque lettres même si elles passent autrement)
+                        input.addEventListener("input", () => normalizePhone(input));
+
+                        // Paste: normalisation
+                        input.addEventListener("paste", (e) => {
+                            e.preventDefault();
+                            const pasted = (e.clipboardData || window.clipboardData).getData("text");
+                            input.value = pasted;
+                            normalizePhone(input);
+                        });
+
+                        // Au chargement si champ prérempli
+                        if (input.value.trim() !== "") normalizePhone(input);
                     });
 
-                    // Keydown: empêche de supprimer/modifier +509 + empêche non-chiffres
-                    input.addEventListener("keydown", (e) => {
-                        const pos = input.selectionStart;
-
-                        // Bloquer suppression dans le prefix
-                        if (pos <= prefix.length && (e.key === "Backspace" || e.key === "Delete")) {
-                            e.preventDefault();
-                            return;
-                        }
-
-                        // Autoriser navigation / contrôle
-                        const allowed = ["ArrowLeft", "ArrowRight", "Tab", "Backspace", "Delete", "Home", "End"];
-                        if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
-
-                        // Après le prefix: uniquement chiffres
-                        if (pos >= prefix.length && !/^\d$/.test(e.key)) {
-                            e.preventDefault();
-                            return;
-                        }
-
-                        // Bloquer si déjà 8 chiffres après prefix
-                        const digitsCount = input.value.slice(prefix.length).replace(/\D/g, "").length;
-                        if (pos >= prefix.length && digitsCount >= maxDigits) {
-                            e.preventDefault();
-                        }
-                    });
-
-                    // Input: sécurité totale (bloque lettres même si elles passent autrement)
-                    input.addEventListener("input", () => normalizePhone(input));
-
-                    // Paste: normalisation
-                    input.addEventListener("paste", (e) => {
-                        e.preventDefault();
-                        const pasted = (e.clipboardData || window.clipboardData).getData("text");
-                        input.value = pasted;
-                        normalizePhone(input);
-                    });
-
-                    // Au chargement si champ prérempli
-                    if (input.value.trim() !== "") normalizePhone(input);
                 });
-
-            });
-        </script>
+            </script>
 
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
@@ -1096,76 +1103,76 @@ et le développement intellectuel des jeunes. Nous croyons que la technologie es
             });
         </script>
 
-       <script>
-           document.addEventListener("DOMContentLoaded", function () {
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
 
-               const slides = document.querySelectorAll('.slide-item');
-               const dotsWrap = document.getElementById('sliderDots');
-               const textWrap = document.querySelector('.slider-text-wrap');
-               const titleEl = document.querySelector('.slider-title');
-               const subtitleEl = document.querySelector('.slider-subtitle');
-               const INTERVAL = 5000;
+                const slides = document.querySelectorAll('.slide-item');
+                const dotsWrap = document.getElementById('sliderDots');
+                const textWrap = document.querySelector('.slider-text-wrap');
+                const titleEl = document.querySelector('.slider-title');
+                const subtitleEl = document.querySelector('.slider-subtitle');
+                const INTERVAL = 5000;
 
-               let current = 0;
-               let timer;
+                let current = 0;
+                let timer;
 
-               // Barre de progression
-               const bar = document.createElement('div');
-               bar.className = 'slider-progress';
-               document.querySelector('.banner-area').appendChild(bar);
+                // Barre de progression
+                const bar = document.createElement('div');
+                bar.className = 'slider-progress';
+                document.querySelector('.banner-area').appendChild(bar);
 
-               // Création des dots
-               slides.forEach((_, i) => {
-                   const dot = document.createElement('button');
-                   dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-                   dot.setAttribute('aria-label', 'Photo ' + (i + 1));
-                   dot.addEventListener('click', () => goTo(i));
-                   dotsWrap.appendChild(dot);
-               });
+                // Création des dots
+                slides.forEach((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+                    dot.addEventListener('click', () => goTo(i));
+                    dotsWrap.appendChild(dot);
+                });
 
-               // Mise à jour du texte avec animation
-               function updateText(slide) {
-                   // Cache le texte
-                   textWrap.classList.remove('text-visible');
+                // Mise à jour du texte avec animation
+                function updateText(slide) {
+                    // Cache le texte
+                    textWrap.classList.remove('text-visible');
 
-                   setTimeout(() => {
-                       titleEl.textContent = slide.dataset.title || '';
-                       subtitleEl.textContent = slide.dataset.subtitle || '';
-                       // Réaffiche avec animation
-                       textWrap.classList.add('text-visible');
-                   }, 300);
-               }
+                    setTimeout(() => {
+                        titleEl.textContent = slide.dataset.title || '';
+                        subtitleEl.textContent = slide.dataset.subtitle || '';
+                        // Réaffiche avec animation
+                        textWrap.classList.add('text-visible');
+                    }, 300);
+                }
 
-               function goTo(index) {
-                   slides[current].classList.remove('active');
-                   dotsWrap.querySelectorAll('.slider-dot')[current].classList.remove('active');
+                function goTo(index) {
+                    slides[current].classList.remove('active');
+                    dotsWrap.querySelectorAll('.slider-dot')[current].classList.remove('active');
 
-                   current = (index + slides.length) % slides.length;
+                    current = (index + slides.length) % slides.length;
 
-                   slides[current].classList.add('active');
-                   dotsWrap.querySelectorAll('.slider-dot')[current].classList.add('active');
+                    slides[current].classList.add('active');
+                    dotsWrap.querySelectorAll('.slider-dot')[current].classList.add('active');
 
-                   updateText(slides[current]);
+                    updateText(slides[current]);
 
-                   // Reset barre
-                   bar.style.transition = 'none';
-                   bar.style.width = '0%';
-                   setTimeout(() => {
-                       bar.style.transition = 'width ' + INTERVAL + 'ms linear';
-                       bar.style.width = '100%';
-                   }, 50);
+                    // Reset barre
+                    bar.style.transition = 'none';
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.transition = 'width ' + INTERVAL + 'ms linear';
+                        bar.style.width = '100%';
+                    }, 50);
 
-                   clearInterval(timer);
-                   timer = setInterval(() => goTo(current + 1), INTERVAL);
-               }
+                    clearInterval(timer);
+                    timer = setInterval(() => goTo(current + 1), INTERVAL);
+                }
 
-               // Initialisation
-               updateText(slides[0]);
-               bar.style.transition = 'width ' + INTERVAL + 'ms linear';
-               bar.style.width = '100%';
-               timer = setInterval(() => goTo(current + 1), INTERVAL);
-           });
-       </script>
+                // Initialisation
+                updateText(slides[0]);
+                bar.style.transition = 'width ' + INTERVAL + 'ms linear';
+                bar.style.width = '100%';
+                timer = setInterval(() => goTo(current + 1), INTERVAL);
+            });
+        </script>
 
     </form>
 </body>
