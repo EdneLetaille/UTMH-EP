@@ -525,18 +525,16 @@ namespace UTMH_Edu.Vue
                 $"Salut {txtPrenom.Text.Trim()} {txtNom.Text.Trim()},\n\n" +
                 "Votre inscription à l'UTMH a été effectuée avec succès.\n\n" +
                 "Pour finaliser et valider votre inscription, veuillez vous présenter " +
-                "à l’établissement avec les documents suivants :\n" +
-                "- Une preuve de paiement des frais d'inscription\n" +
+                "à l’établissement.\n" +
                 "- Votre code d'inscription\n\n" +
-                $"Code d'inscription : {txtCode.Text}\n\n" +
-                "Sans ces éléments, l’inscription ne pourra pas être validée.\n\n" +
+                $"Code d'inscription : {txtCode.Text}\n\n" +              
                 "Cordialement,\n" +
                 "Administration UTMH"
             );
 
 
 
-            ShowAlert("Inscription effectuée avec succès.");
+            ShowAlert("Inscription effectuée avec succès.Pour finaliser et valider votre inscription, veuillez vous présenter à l’établissement.\\n" + $"Code d'inscription : {txtCode.Text}");
             this.viderChamps();
 
         }
